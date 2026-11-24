@@ -10,7 +10,7 @@ export default function About() {
   return (
     <>
       <Section title="About me" subtitle="Engineer by trade, detail-obsessed by nature." className="pt-16">
-        <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
+        <div className="grid gap-12 lg:grid-cols-[1fr_340px] lg:items-center">
           <Reveal direction="left">
             <div className="space-y-4 text-slate-600 dark:text-slate-400">
               <p>
@@ -36,7 +36,7 @@ export default function About() {
           </Reveal>
 
           <Reveal direction="right" delay={150}>
-            <div className="card h-fit p-6 hover:border-flame-500/30">
+            <div className="card h-fit p-6 hover:border-flame-500/30 lg:sticky lg:top-24">
               <img
                 src={profile.avatar}
                 alt={profile.name}

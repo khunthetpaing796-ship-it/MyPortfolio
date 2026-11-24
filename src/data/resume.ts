@@ -20,14 +20,14 @@ export const profile = {
   summary:
     'Frontend engineer with 1+ years of experience shipping production React applications. I care about performance budgets, design systems, and the small details that make a product feel effortless.',
   location: 'Hmawbi, Yangon, Myanmar',
-  email: 'khunthetpaing796@gmail.com',
+  email: 'paing796@gmail.com',
   phone: '+95 9 778412600',
   resumeUrl: '/resume.pdf',
-  avatar: '/assets/khunthetpaing.jpg',
+  avatar: '/khunthetpaing.jpg',
   available: true,
   socials: [
     { label: 'GitHub',   url: 'https://github.com/khunthetpaing796-ship-it?tab=repositories',   icon: 'github' },
-    { label: 'LinkedIn', url: 'https://linkedin.com/in/khunthetpaing', icon: 'linkedin' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/khun-thetpaing-043463415/', icon: 'linkedin' },
     { label: 'Email',    url: 'khunthetpaing796@gmail.com',     icon: 'mail' },
   ] as Social[],
 }
@@ -35,8 +35,8 @@ export const profile = {
 export const stats: Stat[] = [
   { label: 'Years of experience', value: '1+' },
   { label: 'Projects shipped', value: '2+' },
-  { label: 'Lighthouse score', value: '99' },
-  { label: 'Open-source PRs', value: '60+' },
+  // { label: 'Lighthouse score', value: '99' },
+  { label: 'Open-source PRs', value: '4+' },
 ]
 
 export const skills: SkillGroup[] = [
@@ -85,36 +85,36 @@ export const education: Education[] = [
 export const projects: Project[] = [
   {
     id: 'my-portfolio',
-    title: 'Flame UI',
+    title: 'My Protfolio',
     description: 'An accessible, headless React component library with 40+ components, full keyboard support, and a Tailwind preset.',
     tags: ['React', 'TypeScript', 'Tailwind', 'Storybook'],
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://myportfolio-public-hhmqkt4bs-khun-s-projects1.vercel.app/',
     repoUrl: 'https://github.com/khunthetpaing796-ship-it/MyPortfolio',
     featured: true, year: '2026',
   },
   {
-    id: 'taskflow',
-    title: 'TaskFlow',
-    description: 'Real-time collaborative task board with optimistic updates, offline support, and drag-and-drop.',
-    tags: ['React', 'TanStack Query', 'Zustand', 'Supabase'],
-    liveUrl: 'https://example.com',
-    repoUrl: 'https://github.com/khunthetpaing/taskflow',
+    id: 'clothing-admin-dashboard',
+    title: 'Clothing Admin Dashboard',
+    description: 'A comprehensive admin dashboard for managing clothing inventory, orders, and customer data.',
+    tags: ['React', 'Tailwind', 'Figma', 'MySQL'],
+    // liveUrl: 'https://example.com',
+    repoUrl: 'https://github.com/khunthetpaing796-ship-it/Clothing-admin/tree/main',
     featured: true, year: '2026',
   },
   {
-    id: 'devmetrics',
-    title: 'DevMetrics',
-    description: 'Dashboard that visualizes GitHub activity with charts, filters, and a fully typed API layer.',
-    tags: ['Next.js', 'TypeScript', 'Recharts'],
-    repoUrl: 'https://github.com/khunthetpaing/devmetrics',
+    id: 'employee-management',
+    title: 'Employee Management',
+    description: 'A comprehensive employee management system with reporting and analytics.',
+    tags: ['Python', 'pyside6 & pyQt6', 'MySQL'],
+    repoUrl: 'https://github.com/khunthetpaing796-ship-it/employee-management',
     featured: true, year: '2026',
   },
-  {
-    id: 'paperweight',
-    title: 'Paperweight',
-    description: 'Markdown-first note app with instant search, command palette, and a plugin API.',
-    tags: ['React', 'Vite', 'IndexedDB'],
-    repoUrl: 'https://github.com/khunthetpaing/paperweight',
-    featured: true, year: '2026',
-  },
+  // {
+  //   id: 'paperweight',
+  //   title: 'Paperweight',
+  //   description: 'Markdown-first note app with instant search, command palette, and a plugin API.',
+  //   tags: ['React', 'Vite', 'IndexedDB'],
+  //   repoUrl: 'https://github.com/khunthetpaing/paperweight',
+  //   featured: true, year: '2026',
+  // },
 ]

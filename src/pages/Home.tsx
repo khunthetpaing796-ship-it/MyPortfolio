@@ -59,14 +59,14 @@ export default function Home() {
         </div>
 
         {/* STATS */}
-        <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="mt-16 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 100} direction="up">
-              <div className="card group p-5 hover:-translate-y-1 hover:border-flame-500/30 hover:shadow-lg hover:shadow-flame-500/10">
-                <div className="text-2xl font-extrabold tracking-tight text-gradient">
+              <div className="card group flex h-full flex-col p-6 hover:-translate-y-1 hover:border-flame-500/30 hover:shadow-lg hover:shadow-flame-500/10">
+                <div className="text-3xl font-extrabold tracking-tight text-gradient">
                   {stat.value}
                 </div>
-                <div className="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+                <div className="mt-2 text-sm font-medium text-slate-500 dark:text-slate-400">
                   {stat.label}
                 </div>
               </div>
