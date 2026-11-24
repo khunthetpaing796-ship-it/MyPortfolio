@@ -9,7 +9,7 @@ import { education, experience, profile } from '../data/resume'
 export default function Resume() {
   return (
     <Section
-      title="Résumé"
+      title="Resume"
       subtitle="A quick overview. Download the PDF for the full version."
       className="pt-16"
     >

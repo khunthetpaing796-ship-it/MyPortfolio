@@ -29,7 +29,7 @@ export default function About() {
               </p>
               <div className="pt-2">
                 <Button href={profile.resumeUrl} leftIcon={<Download size={16} />}>
-                  Download résumé
+                  Download resume
                 </Button>
               </div>
             </div>

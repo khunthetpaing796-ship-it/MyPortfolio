@@ -1,12 +1,12 @@
 import { useState, type FormEvent } from 'react'
-import { CheckCircle2, Send } from 'lucide-react'
+import { CheckCircle2, Send, AlertCircle } from 'lucide-react' 
 import Button from '../components/Button'
 import Section from '../components/Section'
 import SocialLinks from '../components/SocialLinks'
 import Reveal from '../components/Reveal'
 import { profile } from '../data/resume'
 
-type Status = 'idle' | 'sending' | 'sent'
+type Status = 'idle' | 'sending' | 'sent' | 'error'
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>('idle')
@@ -15,10 +15,32 @@ export default function Contact() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus('sending')
-    await new Promise(r => setTimeout(r, 900)) // TODO: replace with real endpoint
-    setStatus('sent')
-    setForm({ name: '', email: '', message: '' })
-    setTimeout(() => setStatus('idle'), 4000)
+
+    try {
+      
+      const response = await fetch('https://formspree.io/f/xaeoapek', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      })
+
+      if (response.ok) {
+        setStatus('sent')
+        setForm({ name: '', email: '', message: '' }) 
+        setTimeout(() => setStatus('idle'), 5000) 
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   const inputClass =
@@ -40,7 +62,7 @@ export default function Contact() {
                   id="name" required
                   value={form.name}
                   onChange={e => setForm({ ...form, name: e.target.value })}
-                  placeholder="Ada Lovelace"
+                  placeholder="Mg Mg"
                   className={inputClass}
                 />
               </div>
@@ -50,7 +72,7 @@ export default function Contact() {
                   id="email" type="email" required
                   value={form.email}
                   onChange={e => setForm({ ...form, email: e.target.value })}
-                  placeholder="ada@example.com"
+                  placeholder="mgmg@example.com"
                   className={inputClass}
                 />
               </div>
@@ -67,13 +89,19 @@ export default function Contact() {
               />
             </div>
 
-            <div className="flex items-center gap-4">
-              <Button type="submit" disabled={status !== 'idle'} leftIcon={<Send size={16} />}>
-                {status === 'sending' ? 'Sending…' : status === 'sent' ? 'Sent!' : 'Send message'}
+            <div className="flex flex-wrap items-center gap-4">
+              <Button type="submit" disabled={status === 'sending' || status === 'sent'} leftIcon={<Send size={16} />}>
+                {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Sent!' : 'Send message'}
               </Button>
+              
               {status === 'sent' && (
                 <span className="animate-fade-in inline-flex items-center gap-1.5 text-sm font-medium text-emerald-600 dark:text-emerald-400">
                   <CheckCircle2 size={16} /> Thanks — I'll reply soon.
+                </span>
+              )}
+              {status === 'error' && (
+                <span className="animate-fade-in inline-flex items-center gap-1.5 text-sm font-medium text-red-600 dark:text-red-400">
+                  <AlertCircle size={16} /> Something went wrong. Please try again.
                 </span>
               )}
             </div>
