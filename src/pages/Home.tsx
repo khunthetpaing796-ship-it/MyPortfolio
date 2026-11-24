@@ -4,6 +4,7 @@ import ProjectCard from '../components/ProjectCard'
 import Section from '../components/Section'
 import SocialLinks from '../components/SocialLinks'
 import Reveal from '../components/Reveal'
+import HeroGlow from '../components/HeroGlow'
 import { profile, projects, stats } from '../data/resume'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="container-page pt-16 pb-12 sm:pt-24 sm:pb-20">
+        <HeroGlow />
         <div className="max-w-3xl">
           {profile.available && (
             <Reveal direction="down">

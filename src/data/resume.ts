@@ -18,7 +18,7 @@ export const profile = {
   role: 'Frontend Engineer',
   tagline: 'I build fast, accessible interfaces that feel like fire. 🔥',
   summary:
-    'Frontend engineer with 4+ years of experience shipping production React applications. I care about performance budgets, design systems, and the small details that make a product feel effortless.',
+    'Frontend engineer with 1+ years of experience shipping production React applications. I care about performance budgets, design systems, and the small details that make a product feel effortless.',
   location: 'Hmawbi, Yangon, Myanmar',
   email: 'khunthetpaing796@gmail.com',
   phone: '+95 9 778412600',
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     description: 'An accessible, headless React component library with 40+ components, full keyboard support, and a Tailwind preset.',
     tags: ['React', 'TypeScript', 'Tailwind', 'Storybook'],
     liveUrl: 'https://example.com',
-    repoUrl: 'https://github.com/khunthetpaing/flame-ui',
+    repoUrl: 'https://github.com/khunthetpaing796-ship-it/MyPortfolio',
     featured: true, year: '2026',
   },
   {

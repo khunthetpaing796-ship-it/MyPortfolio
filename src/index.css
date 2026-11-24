@@ -4,7 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* ── Flame palette ─────────────────────── */
+  /*  Flame palette  */
   --color-flame-50: #fff7ed;
   --color-flame-100: #ffedd5;
   --color-flame-200: #fed7aa;
@@ -16,10 +16,10 @@
   --color-flame-800: #9a3412;
   --color-flame-900: #7c2d12;
 
-  /* ── Font ──────────────────────────────── */
+  /*  Font  */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  /* ── Animations ────────────────────────── */
+  /* Animations */
   --animate-fade-up: fade-up 0.6s ease-out both;
   --animate-fade-in: fade-in 0.5s ease-out both;
   --animate-fade-down: fade-down 0.5s ease-out both;
@@ -35,7 +35,7 @@
   --animate-blink: blink 1.4s ease-in-out infinite;
 }
 
-/* ── Keyframes ───────────────────────────── */
+/*  Keyframes  */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -86,14 +86,14 @@
   50%      { opacity: 0.35; }
 }
 
-/* ── Base ────────────────────────────────── */
+/*  Base  */
 @layer base {
   html { -webkit-tap-highlight-color: transparent; }
   body { @apply font-sans antialiased; }
   ::selection { @apply bg-flame-500/30; }
 }
 
-/* ── Components ──────────────────────────── */
+/*  Components  */
 @layer components {
   .container-page {
     @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
@@ -123,7 +123,7 @@
   }
 }
 
-/* ── Scrollbar ───────────────────────────── */
+/*  Scrollbar  */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-thumb {
   @apply rounded-full bg-slate-300 dark:bg-slate-700;
@@ -142,3 +142,47 @@
     scroll-behavior: auto !important;
   }
 }
+
+/*  Background Animations  */
+@keyframes mesh-move-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(40px, -60px) scale(1.15); }
+  66%      { transform: translate(-30px, 40px) scale(0.9); }
+}
+
+@keyframes mesh-move-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-50px, 50px) scale(1.2); }
+}
+
+@keyframes mesh-move-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(60px, 30px) scale(0.95); }
+  66%      { transform: translate(-40px, -50px) scale(1.1); }
+}
+
+@keyframes grid-slide {
+  from { background-position: 0 0; }
+  to   { background-position: 60px 60px; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50%      { opacity: 1;   transform: scale(1.2); }
+}
+
+@keyframes drift {
+  0%   { transform: translateY(0) translateX(0); }
+  25%  { transform: translateY(-20px) translateX(10px); }
+  50%  { transform: translateY(-10px) translateX(-15px); }
+  75%  { transform: translateY(-30px) translateX(5px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* 👇 Tailwind v4 အတွက် @layer utilities အစား @utility ကို သုံးပါ */
+@utility bg-mesh-1 { animation: mesh-move-1 22s ease-in-out infinite; }
+@utility bg-mesh-2 { animation: mesh-move-2 18s ease-in-out infinite; }
+@utility bg-mesh-3 { animation: mesh-move-3 26s ease-in-out infinite; }
+@utility bg-grid-slide { animation: grid-slide 12s linear infinite; }
+@utility bg-sparkle { animation: sparkle 3s ease-in-out infinite; }
+@utility bg-drift { animation: drift 15s ease-in-out infinite; }

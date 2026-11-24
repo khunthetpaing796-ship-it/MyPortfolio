@@ -1,5 +1,5 @@
 
-import { FaGithub, FaLinkedin, FaTwitter, FaDribbble } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { profile, type SocialIcon } from '../data/resume'
@@ -7,8 +7,6 @@ import { profile, type SocialIcon } from '../data/resume'
 const iconMap: Record<SocialIcon, IconType> = {
   github: FaGithub,
   linkedin: FaLinkedin,
-  twitter: FaTwitter,
-  dribbble: FaDribbble,
   mail: MdEmail,
 }
 
